@@ -238,14 +238,23 @@
         }
     ],
     "outputs": {
-        "vnetname": {
+        "VirtualNetwork": {
             "type": "object",
             "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vNETName'))) ]"
         },
-        "server": {
+        "Server": {
             "type": "object",
             "value":"[reference(resourceId('Microsoft.Compute/virtualMachines',variables('servervm')))]"    
 
+        },
+        "ServerNIC": {
+            "type": "object",
+            "value": "[reference(resourceId('Microsoft.Network/networkInterfaces',variables('servernic')))]"
+        },
+        "Vnetname": {
+            "type": "string",
+            "value": "[reference(variables('vNETName'))]"
         }
+
     }
 }

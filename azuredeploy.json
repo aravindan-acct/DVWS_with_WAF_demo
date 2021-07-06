@@ -451,6 +451,15 @@
         "Vnetname": {
             "type": "object",
             "value": "[reference(variables('vNETName'))]"
+        },
+        "WAF": {
+            "type": "object",
+            "value": "[reference(resourceId('Microsoft.Compute/virtualMachines',variables('wafvmname')))]"
+        },
+
+        "WAFPublicIP": {
+            "type": "object",
+            "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('wafpublicip')))]"
         }
 
     }

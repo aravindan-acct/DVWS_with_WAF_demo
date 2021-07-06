@@ -5,16 +5,16 @@
         "serverVMName": {
             "value": "dvwssrv" 
         },
-        "vNETName": {
+        "VirtualNetwork": {
             "value": "vnet1" 
         },
         "ServerPassword": {
             "value": "Pa$$w0rd123" 
         },
-        "wafvmname": {
+        "WafVmName": {
             "value": "wafdvws" 
         },
-        "wafpassword": {
+        "WafPassword": {
             "value": "Pa$$w0rd123" 
         }
     }

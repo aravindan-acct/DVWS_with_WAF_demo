@@ -1,0 +1,327 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.1",
+    "title": "DVWS API",
+    "description": "API Used for DVWS Application",
+    "contact": {}
+  },
+  "host": "dvws.local",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v2/notes/{ID}": {
+      "put": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2NotesByID_PUT",
+        "operationId": "ApiV2NotesByID_PUT",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/body"
+            }
+          },
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2NotesByID_DELETE",
+        "operationId": "ApiV2NotesByID_DELETE",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v2/info": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2Info_GET",
+        "operationId": "ApiV2Info_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "403": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v2/notes": {
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2Notes_POST",
+        "operationId": "ApiV2Notes_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json;charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "example": "{\"name\":\"test\",\"body\":\"xxx\",\"type\":\"note\"}",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/info": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV1Info_GET",
+        "operationId": "ApiV1Info_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v2/login": {
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2Login_POST",
+        "operationId": "ApiV2Login_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v2/users": {
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2Users_POST",
+        "operationId": "ApiV2Users_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2Users_GET",
+        "operationId": "ApiV2Users_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v2/users/checkadmin": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2UsersCheckadmin_GET",
+        "operationId": "ApiV2UsersCheckadmin_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v2/notesearch": {
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "summary": "ApiV2Notesearch_POST",
+        "operationId": "ApiV2Notesearch_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/body_1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "body_1": {
+      "title": "body_1",
+      "type": "object",
+      "properties": {
+        "search": {
+          "type": "string"
+        }
+      }
+    },
+    "body": {
+      "title": "body",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "tags": []
+}

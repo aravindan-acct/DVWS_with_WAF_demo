@@ -13,6 +13,9 @@
         },
         "ServerPassword": {
             "type": "securestring"
+        },
+        "wafsubnet": {
+            "type": "string"
         }
     },
     "functions": [],
@@ -25,7 +28,7 @@
         "servernic": "[concat(variables('servervm'), '-NetworkInterface')]",
         "serversubnet": "[concat(variables('vNETName'), variables('servervm'), '-Subnet')]",
         "serverpassword": "[parameters('ServerPassword')]",
-        "wafsubnet": "[concat(variables('vNETName'), '-WAF', '-Subnet')]"
+        "wafsubnet": "[parameters('wafsubnet')]"
     },
     "resources": [
 
@@ -239,8 +242,8 @@
     ],
     "outputs": {
         "VirtualNetwork": {
-            "type": "object",
-            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vNETName'))) ]"
+            "type": "string",
+            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vNETName'))).resourceGuid ]"
         },
         "Server": {
             "type": "object",

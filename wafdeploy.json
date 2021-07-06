@@ -8,7 +8,7 @@
                 "description": "description"
             }
         },
-        "vnetname": {
+        "vNETName": {
             "type": "string",
             "metadata": {
                 "description": "description"
@@ -24,6 +24,18 @@
             "metadata": {
                 "description": "description"
             }
+        },
+        "serverVMName": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "ServerPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "description"
+            }
         }
     },
     "functions": [],
@@ -33,9 +45,9 @@
         "wafpublicip": "[concat(variables('wafvmname'), '-PublicIP')]",
         "wafnsg": "[concat(variables('wafvmname'),'-nsg')]",
         "wafnic": "[concat(variables('wafvmname'), 'NetworkInterface')]",
-        "vnetname":"[parameters('vnetname')]",
-        "wafsubnet": "[parameters('wafsubnet')]",
-        "wafpassword": "[parameters('wafpassword')]"
+        "vnetname":"[parameters('vNETName')]",
+        "wafpassword": "[parameters('wafpassword')]",
+        "ServerPassword": "[parameters('ServerPassword')]"
 
     },
     "resources": [
@@ -113,7 +125,7 @@
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('wafpublicip'))]"
                             },
                             "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetname'), variables('wafsubnet'))]"
+                                "id": "[parameters('wafsubnet')]"
                             }
                         }
                     }
@@ -163,6 +175,29 @@
                     "bootDiagnostics": {
                         "enabled": true,
                         "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts/', toLower(variables('wafstoragename')))).primaryEndpoints.blob]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "baseDeployment",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-10-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/aravindan-acct/DVWS_with_WAF_demo/main/azuredeploy.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "serverVMName": {
+                        "value": "[parameters('serverVMName')]"
+                    },
+                    "vNETName": {
+                        "value": "[variables('vnetname')]"
+                    },
+                    "ServerPassword": {
+                        "value": "[variables('ServerPassword')]"
                     }
                 }
             }

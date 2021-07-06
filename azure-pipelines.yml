@@ -19,6 +19,6 @@ steps:
     resourceGroupName: 'aravindan_dvws'
     location: 'South Central US'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/DVWS_with_WAF_demo/main/azuredeploy.json'
-    csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/DVWS_with_WAF_demo/main/azuredeploy.parameters.json'
+    csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/DVWS_with_WAF_demo/main/wafdeploy.json'
+    csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/DVWS_with_WAF_demo/main/wafdeploy.parameters.json'
     deploymentMode: 'Incremental'

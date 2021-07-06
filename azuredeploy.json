@@ -239,12 +239,12 @@
     ],
     "outputs": {
         "vnetname": {
-            "type": "string",
-            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vNETName'))).resourceGuid ]"
+            "type": "object",
+            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vNETName'))) ]"
         },
         "server": {
-            "type": "string",
-            "value":"[reference(resourceId('Microsoft.Compute/virtualMachines',variables('servervm'))).vmId]"    
+            "type": "object",
+            "value":"[reference(resourceId('Microsoft.Compute/virtualMachines',variables('servervm')))]"    
 
         }
     }

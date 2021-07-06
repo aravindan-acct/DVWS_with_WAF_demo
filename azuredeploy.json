@@ -228,7 +228,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings": {
                     "fileUris": [
-                        ""
+                        "https://raw.githubusercontent.com/aravindan-acct/DVWS_with_WAF_demo/main/scripts/customScript.sh"
                     ]
                 },
                 "protectedSettings": {

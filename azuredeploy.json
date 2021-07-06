@@ -232,7 +232,7 @@
                     ]
                 },
                 "protectedSettings": {
-                    "commandToExecute": "sh customScript.sh"
+                    "commandToExecute": "sudo nohup bash customScript.sh"
                 }
             }
         }
@@ -240,11 +240,11 @@
     "outputs": {
         "vnetname": {
             "type": "string",
-            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vNETName'))).name ]"
+            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vNETName'))).resourceGuid ]"
         },
         "server": {
             "type": "string",
-            "value":"[reference(resourceId('Microsoft.Compute/virtualMachines',variables('servervm'))).name]"    
+            "value":"[reference(resourceId('Microsoft.Compute/virtualMachines',variables('servervm'))).vmId]"    
 
         }
     }

@@ -252,7 +252,7 @@
             "value": "[reference(resourceId('Microsoft.Network/networkInterfaces',variables('servernic')))]"
         },
         "Vnetname": {
-            "type": "string",
+            "type": "object",
             "value": "[reference(variables('vNETName'))]"
         }
 

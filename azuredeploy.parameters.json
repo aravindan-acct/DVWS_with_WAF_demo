@@ -2,22 +2,19 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "wafvmname": {
-            "value": "waf1" 
+        "serverVMName": {
+            "value": "dvwssrv" 
         },
         "vNETName": {
             "value": "vnet1" 
         },
-        "wafsubnet": {
-            "value": "wafsubnet" 
-        },
-        "wafpassword": {
+        "ServerPassword": {
             "value": "Pa$$w0rd123" 
         },
-        "serverVMName": {
-            "value": "dvws1" 
+        "wafvmname": {
+            "value": "wafdvws" 
         },
-        "ServerPassword": {
+        "wafpassword": {
             "value": "Pa$$w0rd123" 
         }
     }
